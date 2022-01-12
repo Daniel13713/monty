@@ -61,3 +61,26 @@ size_t stack_len(const stack_t *h)
 	}
 	return (size);
 }
+
+/**
+ * _isnumber - checks if a string is a number
+ * @str: provided string
+ *
+ * Return: 1 if the string is a number, else, 0.
+ */
+int _isnumber(char *str)
+{
+	int i = 0;
+
+	if (!str)
+		return (0);
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			return (0);
+		}
+	}
+	return (1);
+}

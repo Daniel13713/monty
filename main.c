@@ -1,7 +1,6 @@
 #include "monty.h"
 
 int status = 0;
-
 /**
  * _open - open a file
  *

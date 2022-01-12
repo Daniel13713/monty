@@ -56,6 +56,7 @@ static const instruction_t instructions[] = {
 
 /* Auxiliar fuctions*/
 void executer(stack_t **stack, char *name, char *value, int lnumber);
+int _isnumber(char *str);
 
 size_t print_dlistint(const stack_t *h);
 void free_stack(stack_t *head);

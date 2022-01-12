@@ -22,22 +22,24 @@ void executer(stack_t **stack, char *name, char *value, int lnumber)
 			if (strcmp(name, instructions[0].opcode) != 0)
 			{
 				instructions[counter].f(stack, lnumber);
-				break;
+				return;
 			}
-			if (strcmp(name, instructions[0].opcode) == 0 && !atoi(value))
+			if (strcmp(name, instructions[0].opcode) == 0 && !_isnumber(value))
+			{
+				status = EXIT_FAILURE;
+				fprintf(stderr, "L%d: usage: push integer\n", lnumber);
+				return;
+			}
+			if (strcmp(name, instructions[0].opcode) == 0 && !value)
 			{
 				status = EXIT_FAILURE;
 				fprintf(stderr, "L%d: usage: push integer\n", lnumber);
 				return;
 			}
 			instructions[counter].f(stack, atoi(value));
-			break;
+			return;
 		}
 	}
-	if (!instructions[counter].opcode)
-	{
-		status = EXIT_FAILURE;
-		fprintf(stderr, "L%d: unknown instruction %s\n", lnumber, name);
-		return;
-	}
+	status = EXIT_FAILURE;
+	fprintf(stderr, "L%d: unknown instruction %s\n", lnumber, name);
 }
