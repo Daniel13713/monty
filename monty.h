@@ -49,6 +49,7 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 /* */
 static const instruction_t instructions[] = {
@@ -56,6 +57,7 @@ static const instruction_t instructions[] = {
 	{"pall", pall},
 	{"pint", pint},
 	{"pop", pop},
+	{"swap", swap},
 	{NULL, NULL}};
 
 /* Auxiliar fuctions*/
