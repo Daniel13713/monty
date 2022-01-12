@@ -47,34 +47,14 @@ typedef struct instruction_s
 /* Prototyes of functions*/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
-void sub(stack_t **stack, unsigned int line_number);
-void _div(stack_t **stack, unsigned int line_number);
-void mul(stack_t **stack, unsigned int line_number);
-void mod(stack_t **stack, unsigned int line_number);
 
 /* */
 static const instruction_t instructions[] = {
 	{"push", push},
 	{"pall", pall},
-	{"pint", pint},
-	{"pop", pop},
-	{"swap", swap},
-	{"add", add},
-	{"nop", nop},
-	{"sub", sub},
-	{"div", _div},
-	{"mul", mul},
-	{"mod", mod},
 	{NULL, NULL}};
 
 /* Auxiliar fuctions*/
-char *reader(char *file);
-char **tokennizer(char *readed);
 void executer(stack_t **stack, char *name, char *value, int lnumber);
 
 size_t print_dlistint(const stack_t *h);
