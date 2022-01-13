@@ -41,9 +41,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		}
 		if (value < 0 || value > 127)
 		{
-			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-			status = EXIT_FAILURE;
-			return;
+			break;
 		}
 		printf("%c", value);
 		first = first->next;
