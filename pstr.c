@@ -20,26 +20,20 @@ int _putchar(char c)
  * Return: Nothing
  */
 
-void pstr(stack_t **stack, unsigned int line_number)
+void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *first = NULL;
 	int value = 0;
 
 	if (!stack || !(*stack))
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
-		status = EXIT_FAILURE;
-		return;
+		printf("\n");
 	}
 	first = *stack;
 	while (first != NULL)
 	{
 		value = first->n;
-		if (value == 0)
-		{
-			break;
-		}
-		if (value < 0 || value > 127)
+		if (value <= 0 || value > 127)
 		{
 			break;
 		}
