@@ -57,6 +57,8 @@ void _div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+
 /* */
 static const instruction_t instructions[] = {
 	{"push", push},
@@ -71,11 +73,13 @@ static const instruction_t instructions[] = {
 	{"mul", mul},
 	{"mod", mod},
 	{"pchar", pchar},
+	{"pstr", pstr},
 	{NULL, NULL}};
 
 /* Auxiliar fuctions*/
 void executer(stack_t **stack, char *name, char *value, int lnumber);
 int _isnumber(char *str);
+int _putchar(char c);
 
 size_t print_dlistint(const stack_t *h);
 void free_stack(stack_t *head);
