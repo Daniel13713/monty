@@ -37,7 +37,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		value = first->n;
 		if (value == 0)
 		{
-			return;
+			break;
 		}
 		if (value < 0 || value > 127)
 		{
@@ -45,8 +45,8 @@ void pstr(stack_t **stack, unsigned int line_number)
 			status = EXIT_FAILURE;
 			return;
 		}
-		_putchar(value);
+		printf("%c", value);
 		first = first->next;
 	}
-	_putchar(10);
+	printf("\n");
 }
