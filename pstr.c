@@ -28,6 +28,7 @@ void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (!stack || !(*stack))
 	{
 		printf("\n");
+		return;
 	}
 	first = *stack;
 	while (first != NULL)
