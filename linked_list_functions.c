@@ -74,8 +74,11 @@ int _isnumber(char *str)
 
 	if (!str)
 		return (0);
-
-	for (i = 0; str[i]; i++)
+	if (str[i] == '-')
+	{
+		i++;
+	}
+	for (; str[i]; i++)
 	{
 		if (str[i] < '0' || str[i] > '9')
 		{
