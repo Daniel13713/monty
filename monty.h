@@ -59,6 +59,7 @@ void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void rotl(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void rotr(stack_t **stack, unsigned int line_number __attribute__((unused)));
 
 /* */
 static const instruction_t instructions[] = {
@@ -76,6 +77,7 @@ static const instruction_t instructions[] = {
 	{"pchar", pchar},
 	{"pstr", pstr},
 	{"rotl", rotl},
+	{"rotr", rotr},
 	{NULL, NULL}};
 
 /* Auxiliar fuctions*/
