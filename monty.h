@@ -57,7 +57,8 @@ void _div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
-void pstr(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void rotl(stack_t **stack, unsigned int line_number __attribute__((unused)));
 
 /* */
 static const instruction_t instructions[] = {
@@ -74,6 +75,7 @@ static const instruction_t instructions[] = {
 	{"mod", mod},
 	{"pchar", pchar},
 	{"pstr", pstr},
+	{"rotl", rotl},
 	{NULL, NULL}};
 
 /* Auxiliar fuctions*/
@@ -84,4 +86,6 @@ int _putchar(char c);
 size_t print_dlistint(const stack_t *h);
 void free_stack(stack_t *head);
 size_t stack_len(const stack_t *h);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+
 #endif
